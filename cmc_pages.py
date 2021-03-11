@@ -31,7 +31,8 @@ def get_page_data(html):
             name = ''
 
         try:
-            url = 'https://coinmarketcap.com' + tds[1].find('a', class_='currency-name-container').get('href')
+            url = 'https://coinmarketcap.com' + tds[1].find(
+                'a', class_='currency-name-container').get('href')
         except:
             url = ''
 
@@ -56,9 +57,10 @@ def main():
 
         try:
             pattern = 'Next'
-            url = 'https://coinmarketcap.com/' + soup.find('ul',
-            class_='pagination').find('a',
-            text=re.compile(pattern)).get('href')
+            url = 'https://coinmarketcap.com/' + soup.find(
+                'ul',
+                class_='pagination').find(
+                    'a', text=re.compile(pattern)).get('href')
         except:
             break
 

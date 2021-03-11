@@ -42,8 +42,9 @@ def get_next(response):
     soup = BeautifulSoup(html, 'lxml')
 
     try:
-        url = 'https://youtube.com' + soup.find('button',
-        class_='load-more-button').get('data-uix-load-more-href')
+        url = 'https://youtube.com' + soup.find(
+            'button',
+            class_='load-more-button').get('data-uix-load-more-href')
     except:
         url = ''
 

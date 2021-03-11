@@ -7,9 +7,11 @@ def get_html(url):
     r = requests.get(url)
     return r.text
 
+
 def refined(s):
     r = s.split(' ')[0]
     return r.replace(',', '')
+
 
 def write_csv(data):
     with open('plugins.csv', 'a') as f:
@@ -34,7 +36,7 @@ def get_data(html):
 
         data = {'name': name,
                 'url': url,
-                'reviews': rating }
+                'reviews': rating}
 
         write_csv(data)
 
@@ -42,7 +44,6 @@ def get_data(html):
 def main():
     url = 'https://wordpress.org/plugins/'
     get_data(get_html(url))
-
 
 
 if __name__ == '__main__':

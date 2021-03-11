@@ -2,9 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
+
 def get_html(url):
     r = requests.get(url)
     return r.text
+
 
 def write_csv(data):
     with open('cmc.csv', 'a') as f:
@@ -14,6 +16,7 @@ def write_csv(data):
                          data['symbol'],
                          data['url'],
                          data['price']])
+
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')

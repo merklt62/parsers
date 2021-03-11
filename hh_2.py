@@ -31,7 +31,6 @@ def parse_first_table(html):
         result = score.text
         data.append([result])
 
-   # write_csv(data)
 
 
 def get_pages(html):
